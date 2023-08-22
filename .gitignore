@@ -1,0 +1,9 @@
+proxy/target
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+terraform.tfplan
+terraform.lock.hcl
+.terraform.*
+.vscode
