@@ -8,5 +8,6 @@ num_cpus    = 2
 # run `flyctl auth token` to get your token
 fly_api_token = "verylongandsecuretoken"
 app_name      = "duckling"
-region        = "fra"
-org           = "personal"
+# run `bash region.sh` to get your nearest region
+region = "fra"
+org    = "personal"

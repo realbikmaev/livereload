@@ -47,4 +47,4 @@ RUN set -eux; \
     curl https://github.com/$github_user.keys | sudo tee -a /etc/ssh/authorized_keys/$vm_user;
 
 COPY --from=builder /usr/local/cargo/bin/proxy /usr/local/bin/proxy
-CMD ["bash", "-c", "sudo service ssh start; echo 'ssh server started'; proxy"]
+CMD ["bash", "-c", "sudo service ssh start; echo 'ssh server started'; main.sh; proxy"]
