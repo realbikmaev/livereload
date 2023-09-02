@@ -17,11 +17,14 @@ RUN set -eux; \
     bind9-dnsutils iputils-ping iproute2 curl ca-certificates htop \
     curl wget ca-certificates git-core \
     openssh-server openssh-client \
-    sudo less tree; \
+    sudo less tree locales; \
     apt clean autoclean; \
     apt autoremove --yes; \
     rm -rf /var/lib/{apt,dpkg,cache,log}/; \
-    echo "installed base utils!"
+    echo "installed base utils!"; \
+    locale-gen en_US.UTF-8; \
+    update-locale LANG=en_US.UTF-8; \
+    echo "set locale"
 
 RUN set -eux; \
     useradd -ms /usr/bin/bash $vm_user; \
