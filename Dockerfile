@@ -15,9 +15,9 @@ RUN set -eux; \
     apt update; \
     apt install --yes --no-install-recommends \
     bind9-dnsutils iputils-ping iproute2 curl ca-certificates htop \
-    curl wget ca-certificates git-core \
+    wget git-core build-essential \
     openssh-server openssh-client \
-    sudo less tree locales; \
+    sudo less tree locales docker.io; \
     apt clean autoclean; \
     apt autoremove --yes; \
     rm -rf /var/lib/{apt,dpkg,cache,log}/; \
