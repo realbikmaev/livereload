@@ -14,17 +14,27 @@ RUN set -eux; \
     export DEBIAN_FRONTEND=noninteractive; \
     apt update; \
     apt install --yes --no-install-recommends \
-    bind9-dnsutils iputils-ping iproute2 curl ca-certificates htop \
-    wget git-core build-essential \
-    openssh-server openssh-client \
+    bind9-dnsutils iputils-ping iproute2 curl \
+    openssh-server openssh-client apt-utils \
+    htop wget git-core git build-essential \
+    xz-utils tk-dev libffi-dev liblzma-dev \
+    libreadline-dev libsqlite3-dev llvm \
+    python3-openssl ca-certificates jq \
+    libssl-dev zlib1g-dev libbz2-dev \
+    libncurses5-dev libncursesw5-dev \
     sudo less tree locales docker.io; \
     apt clean autoclean; \
     apt autoremove --yes; \
     rm -rf /var/lib/{apt,dpkg,cache,log}/; \
     echo "installed base utils!"; \
+    localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8; \
     locale-gen en_US.UTF-8; \
     update-locale LANG=en_US.UTF-8; \
     echo "set locale"
+
+RUN set -eux; \
+    yes | unminimize; \
+    echo "unminimized ubuntu"
 
 RUN set -eux; \
     useradd -ms /usr/bin/bash $vm_user; \
@@ -44,6 +54,7 @@ RUN set -eux; \
 
 USER $vm_user
 WORKDIR $volume_path
+ENV LANG en_US.utf8
 
 RUN set -eux; \
     sudo mkdir /etc/ssh/authorized_keys; \
