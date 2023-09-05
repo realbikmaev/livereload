@@ -22,7 +22,8 @@ RUN set -eux; \
     python3-openssl ca-certificates jq \
     libssl-dev zlib1g-dev libbz2-dev \
     libncurses5-dev libncursesw5-dev \
-    sudo less tree locales docker.io; \
+    sudo less tree locales docker.io \
+    psmisc tmux vim man-db bc; \
     apt clean autoclean; \
     apt autoremove --yes; \
     rm -rf /var/lib/{apt,dpkg,cache,log}/; \
