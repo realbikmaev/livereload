@@ -1,6 +1,6 @@
 ## what is this?
 
-Terraform template that deploys live reload server on [fly.io](https://fly.io/).
+Terraform template that deploys live reload server on [fly.io](https://fly.io/)
 
 ## why do I need this?
 
@@ -22,11 +22,7 @@ Sure!
 
 ## if there are altenatives...
 
-Why bother rolling out your own thing? Well, alternatives provide tunnels from the public internet to your localhost but I wanted to achieve a couple of things on top of that:
-
-1. I think servers should have normal names like `app_name.fly.dev` and not `crazy-stupid-ideas-yolo.trycloudflare.com`
-2. Chonky datasets just don't fit into my laptop, how else would I visualize them?
-3. I don't want to have a laptop powered up 24/7
+Why bother rolling out your own thing? I just felt like doing this.
 
 ## how do i use this?
 
@@ -60,4 +56,4 @@ npm run dev
 
 Rust module shamelessly stolen from [here](https://fasterthanli.me/articles/remote-development-with-rust-on-fly-io).
 
-Terraform code was revealed to me in a dream.
+Terraform code was revealed to me in a dream...
